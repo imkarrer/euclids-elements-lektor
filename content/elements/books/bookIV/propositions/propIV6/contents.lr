@@ -79,13 +79,13 @@ Let {ABCD} be the given circle.
             { text: "It is required to inscribe a square in the circle {ABCD}.",
               visible: ["ABCD"],
               highlighted: ["ABCD"] },
-            { text: "Draw two diameters {AC} and {BD} of the circle {ABCD} at right angles to one another.",
+            { text: "Draw two diameters {AC} and {BD} of the circle {ABCD} at right angles to one another,",
               visible: ["ABCD", "AC", "BD", "A", "B", "C", "D"],
               highlighted: ["AC", "BD"],
               transition: { animations: [
                   { elem: "AC",     name: "Line.straightEdgeConnect" },
                   { elem: "BD",     name: "Line.straightEdgeConnect" } ] } },
-            { text: "And join {AB}, {BC}, {CD}, and {DA}.",
+            { text: "and join {AB}, {BC}, {CD}, and {DA}.",
               visible: ["ABCD", "AC", "BD", "A", "B", "C", "D", "AB", "BC", "CD", "DA", "square"],
               highlighted: ["AB", "BC", "CD", "DA"],
               transition: { animations: [
