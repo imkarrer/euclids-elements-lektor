@@ -54,8 +54,8 @@ Let {ABCD} be the given circle.
             "BE;line;connect;B,E;0;0;0",
             "ED;line;connect;E,D;0;0;0",
             "EA;line;connect;E,A;0;0;0",
-            "angAEB;sector;angleMarker;E,A,B;0;0;orange;orange",
-            "angBAD;sector;angleMarker;A,B,D;0;0;orange;orange"
+            "angAEB;sector;angleMarkerRight;E,A,B;0;0;orange;orange",
+            "angBAD;sector;angleMarkerRight;A,B,D;0;0;orange;orange"
         ],
         // A and C are the circle's free points, so without deferring them the
         // auto-union would stand them on slides 1-2 with labels the caption has
@@ -69,18 +69,26 @@ Let {ABCD} be the given circle.
             "AD": "DA"
         },
         slides: [
+            { text: "To inscribe a square in a given circle.",
+              visible: ["ABCD"],
+              highlighted: ["ABCD"],
+              justifications: [{ ref: "IV.6" }] },
             { text: "Let {ABCD} be the given circle.",
               visible: ["ABCD"],
               highlighted: ["ABCD"] },
             { text: "It is required to inscribe a square in the circle {ABCD}.",
               visible: ["ABCD"],
               highlighted: ["ABCD"] },
-            { text: "Draw two diameters {AC} and {BD} of the circle {ABCD} at right angles to one another, and join {AB}, {BC}, {CD}, and {DA}.",
-              visible: ["ABCD", "AC", "BD", "A", "B", "C", "D", "AB", "BC", "CD", "DA", "square"],
-              highlighted: ["AC", "BD", "AB", "BC", "CD", "DA"],
+            { text: "Draw two diameters {AC} and {BD} of the circle {ABCD} at right angles to one another.",
+              visible: ["ABCD", "AC", "BD", "A", "B", "C", "D"],
+              highlighted: ["AC", "BD"],
               transition: { animations: [
                   { elem: "AC",     name: "Line.straightEdgeConnect" },
-                  { elem: "BD",     name: "Line.straightEdgeConnect" },
+                  { elem: "BD",     name: "Line.straightEdgeConnect" } ] } },
+            { text: "And join {AB}, {BC}, {CD}, and {DA}.",
+              visible: ["ABCD", "AC", "BD", "A", "B", "C", "D", "AB", "BC", "CD", "DA", "square"],
+              highlighted: ["AB", "BC", "CD", "DA"],
+              transition: { animations: [
                   // The four joins are drawn by the quadrilateral: AB, BC, CD
                   // and DA are zero-colour highlight targets, so animating
                   // them individually would draw nothing. Outlining `square`
@@ -110,7 +118,10 @@ Let {ABCD} be the given circle.
             { text: "For the same reason each of the angles ABC, BCD, and CDA is also right. Therefore the quadrilateral {ABCD|square} is right-angled.",
               visible: ["ABCD", "AC", "BD", "A", "B", "C", "D", "AB", "BC", "CD", "DA", "E", "square"],
               highlighted: ["square"] },
-            { text: "But it was also proved equilateral, therefore it is a square, and it has been inscribed in the circle {ABCD}. Therefore the square {ABCD|square} has been inscribed in the given circle.",
+            { text: "But it was also proved equilateral, therefore it is a square, and it has been inscribed in the circle {ABCD}.",
+              highlighted: ["square", "ABCD"],
+              justifications: [{ ref: "Q.E.F." }] },
+            { text: "Therefore the square {ABCD|square} has been inscribed in the given circle.",
               highlighted: ["square", "ABCD"],
               justifications: [{ ref: "Q.E.F." }] }
         ],

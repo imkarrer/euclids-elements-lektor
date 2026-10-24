@@ -63,6 +63,10 @@ It is required to fit a straight line into the circle {ABC} equal to the straigh
             "CA":  "AC"
         },
         slides: [
+            { text: "To fit into a given circle a straight line equal to a given straight line which is not greater than the diameter of the circle.",
+              visible: ["ABC", "D"],
+              highlighted: ["ABC", "D"],
+              justifications: [{ ref: "IV.1" }] },
             { text: "Let {ABC} be the given circle, and {D} the given straight line not greater than the diameter of the circle.",
               visible: ["ABC", "D"],
               highlighted: ["ABC", "D"] },
@@ -76,9 +80,12 @@ It is required to fit a straight line into the circle {ABC} equal to the straigh
                   { elem: "BC", name: "Line.straightEdgeConnect" } ] } },
             { text: "If {BC} equals {D}, then that which was proposed is done, for {BC} has been fitted into the circle {ABC} equal to the straight line {D}.",
               highlighted: ["BC", "D"] },
-            { text: "But, if {BC} is greater than {D}, make {CE} equal to {D}, describe the circle {EAF} with center {C} and radius {CE}, and join {CA}.",
+            { text: "But, if {BC} is greater than {D}, make {CE} equal to {D}.",
+              visible: ["ABC", "D", "BC", "B", "C", "E", "CE"],
+              highlighted: ["CE"] },
+            { text: "Describe the circle {EAF} with center {C} and radius {CE}, and join {CA}.",
               visible: ["ABC", "D", "BC", "B", "C", "E", "CE", "AEF", "F", "A", "AC"],
-              highlighted: ["CE", "AEF", "AC"],
+              highlighted: ["AEF", "AC"],
               transition: { animations: [
                   { elem: "E",   name: "Point.appear" },
                   { elem: "AEF", name: "Circle.compass" },
