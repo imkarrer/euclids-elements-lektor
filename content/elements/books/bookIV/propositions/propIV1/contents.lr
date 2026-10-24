@@ -78,7 +78,9 @@ It is required to fit a straight line into the circle {ABC} equal to the straigh
               highlighted: ["BC"],
               transition: { animations: [
                   { elem: "BC", name: "Line.straightEdgeConnect" } ] } },
-            { text: "If {BC} equals {D}, then that which was proposed is done, for {BC} has been fitted into the circle {ABC} equal to the straight line {D}.",
+            { text: "If {BC} equals {D}, then that which was proposed is done,",
+              highlighted: ["BC", "D"] },
+            { text: "for {BC} has been fitted into the circle {ABC} equal to the straight line {D}.",
               highlighted: ["BC", "D"] },
             { text: "But, if {BC} is greater than {D}, make {CE} equal to {D}.",
               visible: ["ABC", "D", "BC", "B", "C", "E", "CE"],
